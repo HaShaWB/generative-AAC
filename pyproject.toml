@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gAAC"
+version = "0.1.0"
+authors = [
+    {name = "HaShaWB", email = "whitebluej@kaist.ac.kr"}
+]
+description = "AI-powered service that converts natural language to personalized AAC symbols for language-impaired communication"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "litellm",
+    "python-dotenv",
+    "google-genai",
+    "pillow",
+]
+
+[project.urls]
+Homepage = "https://github.com/HaShaWB/generative-AAC"
+
+[tool.setuptools]
+packages = ["gAAC"]
+include-package-data = true
