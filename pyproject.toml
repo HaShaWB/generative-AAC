@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gAAC"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
     {name = "HaShaWB", email = "whitebluej@kaist.ac.kr"}
 ]

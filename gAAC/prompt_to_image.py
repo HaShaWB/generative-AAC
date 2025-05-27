@@ -17,10 +17,11 @@ except FileNotFoundError:
     print("Environment file not found. Please ensure the .env file exists in the 'env' directory.")
 
 
-_client = genai.Client(api_key=os.environ["GENAI_API_KEY"])
+
 
 
 def prompt_to_image(prompt: str, num: int=2):
+    _client = genai.Client(api_key=os.environ["GENAI_API_KEY"])
     response = _client.models.generate_images(
         model=IMAGE_MODEL,
         prompt=prompt,
