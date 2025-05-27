@@ -1,4 +1,4 @@
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 
 from .keyword_to_prompt import keyword_to_prompt
 from .prompt_to_image import prompt_to_image
