@@ -3,6 +3,7 @@
 import litellm
 from dotenv import load_dotenv
 from importlib import resources
+import os
 
 
 LLM_MODEL = "anthropic/claude-sonnet-4-20250514"
@@ -15,12 +16,11 @@ except FileNotFoundError:
     print("Environment file not found. Please ensure the .env file exists in the 'env' directory.")
 
 
-try:
-    with resources.open_text('gAAC.prompts', 'keyword_to_prompt.md') as f:
-        prompt = f.read()
-except FileNotFoundError:
-    with open("gAAC/prompts/keyword_to_prompt.md", "r", encoding="utf-8") as f:
-        prompt = f.read()
+_HERE = os.path.abspath(os.path.dirname(__file__))
+_PROMPT_PATH = os.path.join(_HERE, "prompts", "keyword_to_prompt.md")
+
+with open(_PROMPT_PATH, "r", encoding="utf-8") as f:
+    prompt = f.read()
 
 
 def keyword_to_prompt(keyword: str) -> str:
